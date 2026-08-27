@@ -163,9 +163,9 @@ The vulnerability allowed an unprivileged local process to crash the operating s
 
 The research did not establish arbitrary kernel read/write, information disclosure, or privilege escalation. Those impacts should not be inferred from the null dereference alone.
 
-## Lessons for kernel developers
+## SO..
 
-The central lesson is that IPC output parameters must be treated as untrusted, even when the server is an exception handler belonging to the same process. Any value returned across the boundary must be validated against all state captured before the call.
+The IPC output parameters must be treated as untrusted, even when the server is an exception handler belonging to the same process. Any value returned across the boundary must be validated against all state captured before the call.
 
 In particular, state conversion APIs should either:
 
